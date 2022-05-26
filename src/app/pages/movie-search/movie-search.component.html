@@ -1,0 +1,36 @@
+<nb-card accent="info">
+  <nb-card-header>Search for movies</nb-card-header>
+  <nb-card-body>
+    <div>
+      <input
+        nbInput
+        [nbAutocomplete]="auto"
+        placeholder="Search movie"
+        #autoInput
+        (input)="onChange()"
+      />
+      <button nbButton>Bookmark</button>
+    </div>
+
+    <nb-autocomplete
+      #auto
+      (selectedChange)="onSelectionChange($event)"
+      [activeFirst]="true"
+    >
+      <nb-option
+        *ngFor="let option of filteredOptions$ | async; index as i"
+        [value]="option.Title"
+        class="result-list-item"
+      >
+        <img [src]="option.Poster" [title]="option.Title" />
+        <div class="movie-details">
+          <div class="movie-title">{{ option.Title }}</div>
+          <div class="extra-info">
+            <div class="movie-year">{{ option.Year }}</div>
+            <div class="movie-rating">{{ option.imdbRating }}</div>
+          </div>
+        </div>
+      </nb-option>
+    </nb-autocomplete>
+  </nb-card-body>
+</nb-card>

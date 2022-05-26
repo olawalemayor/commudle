@@ -1,0 +1,28 @@
+.result-list-item {
+  display: flex;
+  border-bottom: 1px solid;
+}
+
+.result-list-item img {
+  width: 50px;
+  height: auto;
+}
+
+.result-list-item .movie-details {
+  padding-left: 1rem;
+}
+
+.movie-details .extra-info {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.extra-info .movie-year {
+  font-size: 10px;
+}
+
+.extra-info .movie-year {
+  font-size: 12px;
+  font-weight: 700;
+}
