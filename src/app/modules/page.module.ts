@@ -8,6 +8,7 @@ import {
   NbCardModule,
   NbInputModule,
   NbLayoutModule,
+  NbListModule,
 } from '@nebular/theme';
 
 @NgModule({
@@ -20,6 +21,7 @@ import {
     NbLayoutModule,
     NbAutocompleteModule,
     HttpClientModule,
+    NbListModule,
   ],
 })
 export class PageModule {}

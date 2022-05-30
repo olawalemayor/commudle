@@ -9,7 +9,7 @@ import { MovieResponse, Movie } from '../models/movie';
 export class MovieService {
   constructor(private _http: HttpClient) {}
 
-  apiURL = 'http://localhost:8080/search/';
+  private apiURL = 'http://localhost:8080/search/';
 
   searchMovie(movie: string): Observable<Movie[]> {
     return movie

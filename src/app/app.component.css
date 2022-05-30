@@ -1,0 +1,15 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.header .brand {
+  font-weight: 700;
+  font-size: larger;
+}
+
+.header a {
+  text-decoration: none;
+  text-transform: uppercase;
+}

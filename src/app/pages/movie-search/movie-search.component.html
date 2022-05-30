@@ -9,7 +9,9 @@
         #autoInput
         (input)="onChange()"
       />
-      <button nbButton>Bookmark</button>
+      <button nbButton (click)="bookmarkMovie(autoInput.value)">
+        Bookmark
+      </button>
     </div>
 
     <nb-autocomplete

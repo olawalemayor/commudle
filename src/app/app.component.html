@@ -1,5 +1,15 @@
 <nb-layout>
-  <nb-layout-header>Commodule Movies Search App </nb-layout-header>
+  <nb-layout-header>
+    <div class="header">
+      <div class="brand">
+        <a routerLink="/"> Commodule Movies Search App </a>
+      </div>
+
+      <div>
+        <a routerLink="/bookmarks">Bookmarks</a>
+      </div>
+    </div>
+  </nb-layout-header>
 
   <nb-layout-column class="colored-column-basic">
     <router-outlet></router-outlet>

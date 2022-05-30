@@ -20,6 +20,20 @@ export class MovieSearchComponent implements OnInit {
 
   @ViewChild('autoInput') input: any;
 
+  bookmarkMovie(movie: string) {
+    const movies = sessionStorage.getItem('bookmarkedMovies');
+    if (movies?.length) {
+      let bookmarkedMovies = JSON.parse(movies);
+      bookmarkedMovies.push(movie);
+      sessionStorage.setItem(
+        'bookmarkedMovies',
+        JSON.stringify(bookmarkedMovies)
+      );
+    } else {
+      sessionStorage.setItem('bookmarkedMovies', JSON.stringify([movie]));
+    }
+  }
+
   onChange() {
     this.filteredOptions$ = this.movieService.searchMovie(
       this.input.nativeElement.value
