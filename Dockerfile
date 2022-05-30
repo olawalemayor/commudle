@@ -11,4 +11,5 @@ RUN npm run build
 
 # Final image
 # CMD ["node", "server.js"]
-CMD ["npm", "start"]
+#CMD ["npm", "start"]
+CMD node server.js --bind 0.0.0.0:$PORT wsgi
