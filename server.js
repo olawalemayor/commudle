@@ -16,7 +16,7 @@ app.get("/*", (req, res) => {
   res.sendFile(path.join(__dirname, "dist/commodule/index.html"));
 });
 
-const port = 8080 || process.env.port;
+const port = process.env.port || 8080;
 
 app.listen(port, () => {
   console.log(`Server started on port: ${port}`);
