@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { map, Observable, of } from 'rxjs';
+import { environment } from 'src/environments/environment';
 import { MovieResponse, Movie } from '../models/movie';
 
 @Injectable({
@@ -9,9 +10,9 @@ import { MovieResponse, Movie } from '../models/movie';
 export class MovieService {
   constructor(private _http: HttpClient) {}
 
-  private url = window.location.origin;
+  url = `${environment.apiUrl}/?apikey=${environment.apiKey}`;
 
-  private apiURL = `${this.url}/search/`; //https://localhost:8080 on development
+  private apiURL = `${this.url}&s=/`; //https://localhost:8080 on development
 
   searchMovie(movie: string): Observable<Movie[]> {
     return movie
